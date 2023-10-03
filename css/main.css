@@ -1,0 +1,88 @@
+.border-left-main{
+    border: none!important;
+    border-left: 2px solid gray!important;
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+}
+.card-rasm-olx img{
+    width: 100%;
+    height: 10px;
+}
+.font-12{
+    font-size: 12px;
+}
+.pr-5plus{
+    padding-right:5rem;
+}
+.d-inline-block-manual{
+    margin-left: 135px;
+    margin-top: -50px;
+}
+.batafsil-junbotrom{
+    margin-left: 650px;
+    margin-top: -90px;
+}
+.btn-light{
+    background-color: #f8f9fa;
+    border: 5px solid #f8f9fa;
+}
+.btn-light:hover{
+    background-color: #0d66c2;
+    color: #f8f9fa
+}
+.OLX_LAST{
+    text-decoration: none;
+    color: black;
+}
+.OLX_LAST:hover{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+.appstore{
+    position: absolute;
+    right: -50px;
+    top: 0;
+}
+.card-kategoriya-rasm{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    box-sizing:border-box;
+    background-color:red;
+}
+.btn-hisobToldirish{
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+}
+.btn-hisobToldirish:hover{
+    background-color: #111111;
+    color: white;
+}
+.btn-sotibOlish{
+    padding: 0.5rem 1rem;
+    background-color: #111111;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+.btn-sotibOlish:hover{
+    background-color: transparent;
+    color: black;
+}
+.navlink-hover{
+    color: black;
+    text-decoration: none;
+    padding: 0;
+}
+.navlink-hover:hover{
+    background-color: black;
+    color: white;
+}

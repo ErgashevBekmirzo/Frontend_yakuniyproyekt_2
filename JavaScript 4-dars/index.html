@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 4-5-darslar</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+<nav class="nav navbar-nav navbar-expand-md sticky-top  bg-dark pr-0" data-toggle="navbar">
+    <div class="container pr-0">
+        <a class="navbar-brand d-inline-block"><img src="../rasmlar/OLX-Logo.png" alt="olx-logo" style="width:100px;"></a>
+        <ul class="list-unstyled d-inline-block navbar-expand-md float-lg-right my-2">
+            <li class="nav-item d-inline-block px-3"><a href="index.html" class="text-white">E'lonlar</a></li>
+            <li class="nav-item d-inline-block px-3 pr-0"><a href="#" class="text-white">Рус</a></li>
+            <li class="nav-item d-inline-block text-white px-0 mx-0">|</li>
+            <li class="nav-item d-inline-block px-3 pl-0"><a href="#" class="disabled text-white">O'z</a></li>
+            <li class="nav-item d-inline-block px-3"><a href="#" class="text-white" style="font-size:25px;">♡</a></li>
+            <li class="nav-item d-inline-block px-3"><a href="../JavaScript%204-dars/index.html" class="text-white"> Hisobingiz</a></li>
+            <li class="nav-item d-inline-block px-3"><button class="btn btn-light">E'lon Berish</button></li>
+        </ul>
+    </div>
+</nav>
+<div class="modal fade" id="startModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="mb-0">Tizimga kirish</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="login">Loginni kiriting!</label>
+                    <input type="text" class="form-control" id="login">
+                </div>
+                <div class="form-group">
+                    <label for="password">Parolni kiriting!</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="startBtn">Kirish!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="mb-0">Ma'lumotni o'zgartirish: </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditUser">To'lovchi</label>
+                            <input type="text" class="form-control" id="payEditUser">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditUserId">To'lovchi hisob raqami</label>
+                            <input type="text" class="form-control" id="payEditUserId">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditOrder">Chek raqami</label>
+                            <input type="text" disabled class="form-control" id="payEditOrder">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditSum">To'lov summasi</label>
+                            <input type="text" class="form-control" id="payEditSum">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditTarget">To'lovchi maqsadi</label>
+                            <input type="text" class="form-control" id="payEditTarget">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditType">To'lov turi</label>
+                            <select name="payType" id="payEditType" class="form-control">
+                                <option value="Naqd">Naqd</option>
+                                <option value="Plastik">Plastik</option>
+                                <option value="Pul o'tkazish">Pul o'tkazish</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditDate">To'lov sanasi</label>
+                            <input type="date" disabled class="form-control" id="payEditDate">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="editBtn">Saqlash</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container d-none" id="workingBlock">
+    <div class="row my-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">Sizning menejeringiz: <span id="kassir"></span> </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payUser">To'lovchi</label>
+                                <input type="text" class="form-control" id="payUser">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payUserId">To'lovchi hisob raqami</label>
+                                <input type="text" class="form-control" id="payUserId">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payOrder">chek raqami</label>
+                                <input type="text" class="form-control" id="payOrder">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="paySum">To'lov summasi</label>
+                                <input type="text" class="form-control" id="paySum">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payTarget">To'lov maqsadi</label>
+                                <input type="text" class="form-control" id="payTarget">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payType">To'lov turi</label>
+                                <select name="tolovTuri" class="form-control" id="payType">
+                                    <option value="Naqd">Naqd</option>
+                                    <option value="Plastik karta">Plastik karta</option>
+                                    <option value="Pul o'tkazish">Pul o'tkazish</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payDate">To'lov sanasi</label>
+                                <input type="date" class="form-control" id="payDate">
+                            </div>
+                        </div>
+                        <div class="col-md-4 pt-4">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-success mt-2" id="addPay">Qo'shish</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table-striped table table-bordered">
+                        <tr>
+                            <th>T/R</th>
+                            <th>F.I.SH</th>
+                            <th>To'lov summasi</th>
+                            <th>Chek raqami</th>
+                            <th>To'lov maqsadi</th>
+                            <!--<th>To'lov turi</th>-->
+                            <th>Sana</th>
+                            <th>Amallar</th>
+                        </tr>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jQuery.min.js"></script>
+<script src="js/src/popover.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
